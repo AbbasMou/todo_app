@@ -1,0 +1,20 @@
+{% extends "task/base.html" %}
+{% block content %}
+{% if user.is_authenticated %}
+{% for task in tasks %}
+<div class="card">
+    <div class="card-body">
+
+        <a class="primary" href="{% url 'task-detail' task.id %}">
+            <h5 class="card-title">{{ task.title}}</h5>
+        </a>
+        <p class="card-text">{{task.details}}</p>
+        <h3 class="card-title">{{ task.deadline}}</h3>
+        <a class="btn btn-danger" href="{% url 'task-home-delete' task.id%}">delete task</a>
+        <a class="btn btn-secondary" href="{% url 'task-home-update' task.id%}">update task</a>
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "task/base.html" %}
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ object.title}}</h5>
+        <p class="card-text">{{object.details}}</p>
+        <h3 class="card-title">{{ object.deadline}}</h3>
+        <a class="btn btn-danger" href="{% url 'task-delete' object.id%}">delete task</a>
+        <a class="btn btn-secondary" href="{% url 'task-update' object.id%}">update task</a>
+
+
+    </div>
+</div>
+
+{% endblock %}
