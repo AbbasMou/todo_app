@@ -26,6 +26,7 @@ from .forms import UserRegisterForm
 #         return render(request, 'users/register.html', {'form': form})
 
 
+#method that deals with unique email and username
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
